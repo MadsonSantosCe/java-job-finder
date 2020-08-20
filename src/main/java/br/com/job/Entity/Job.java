@@ -19,19 +19,21 @@ public class Job implements Serializable {
     private String description;
     private String company;
     private String salary;
-    private String email;
+    private String email;    
+    private Boolean new_job;
     private Date createdAt;
 
     public Job() {
     }
 
-    public Job(Integer id, String title, String description, String company, String salary, String email) {
+    public Job(Integer id, String title, String description, String company, String salary, String email, Boolean new_job) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.company = company;
         this.salary = salary;
         this.email = email;
+        this.new_job = new_job;
         this.createdAt = new Date(System.currentTimeMillis());
     }
 
@@ -83,6 +85,14 @@ public class Job implements Serializable {
         this.email = email;
     }
 
+    public boolean isNew_job() {
+        return new_job;
+    }
+
+    public void setNew_job(boolean new_job) {
+        this.new_job = new_job;
+    }
+
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -114,6 +124,6 @@ public class Job implements Serializable {
         } else if (!id.equals(other.id))
             return false;
         return true;
-    }   
+    }    
 
 }

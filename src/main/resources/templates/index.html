@@ -48,37 +48,15 @@
           <div class="row">
             <div class="col-md-12">
               <h2 id="job-list-title">Veja as nossas vagas em destaque</h2>
-              <ul id="job-list" class="list-group">
-                <li class="list-group-item new-job">
+              <ul id="job-list" class="list-group" th:each="job : ${jobs}">
+                <li th:class="${job.new_job} ? 'list-group-item new-job' : 'list-group-item' ">
                   <img src="img/company.png" alt="Company">
-                  <p>Empresa</p>
-                  <h2>Título da vaga</h2>
-                  <p>R$2000,00</p>
+                  <p th:text="${job.company}"></p>
+                  <h2 th:text="${job.title}"></h2>
+                  <p th:text="${job.salary}"></p>
                   <span class="new-job-label">Nova</span>
                   <a class="btn btn-primary">Ver vaga</a>
-                </li>
-                <li class="list-group-item new-job">
-                  <img src="img/company.png" alt="Company">
-                  <p>Empresa</p>
-                  <h2>Título da vaga</h2>
-                  <p>R$2000,00</p>
-                  <span class="new-job-label">Nova</span>
-                  <a class="btn btn-primary">Ver vaga</a>
-                </li>
-                <li class="list-group-item">
-                  <img src="img/company.png" alt="Company">
-                  <p>Empresa</p>
-                  <h2>Título da vaga</h2>
-                  <p>R$2000,00</p>
-                  <a class="btn btn-primary">Ver vaga</a>
-                </li>            
-                <li class="list-group-item">
-                  <img src="img/company.png" alt="Company">
-                  <p>Empresa</p>
-                  <h2>Título da vaga</h2>
-                  <p>R$2000,00</p>
-                  <a class="btn btn-primary">Ver vaga</a>
-                </li>
+                </li>                
               </ul>
             </div>
           </div>
