@@ -1,35 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">    
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>    
     <title>Job Finder</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <!--/*/ <th:block th:include="fragments/head :: head"></th:block> /*/-->
 </head>
 <body>
 
-    <header>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">Job Finder</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navberNav" aria-expanded="false" aria-label="Toggle navigation"></i>>
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Ver Vagas</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="index.html">Abrir Vagas</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 
     <div id="top-container" class="container-fluid">
         <h1 id="main-title" class="text-center">Encontre o emprego dos seus sonhos</h1>
