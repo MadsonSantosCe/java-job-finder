@@ -2,6 +2,7 @@ package br.com.job.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +33,7 @@ public class JobController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/jobs", method = RequestMethod.GET)
+    @RequestMapping(value = "/jobs/add", method = RequestMethod.GET)
     public ModelAndView pathAdd(Job job){
         ModelAndView modelAndView = new ModelAndView("/jobs");        
         modelAndView.addObject("job", job);
@@ -48,6 +49,13 @@ public class JobController {
 
         jobService.save(job);
         return "redirect:/";
+    }
+
+    @RequestMapping(value = "/jobs/{id}", method = RequestMethod.GET)
+    public ModelAndView viewJob(@PathVariable Integer id, Job job){
+        ModelAndView modelAndView = new ModelAndView("/view");        
+        modelAndView.addObject("job", jobService.findById(id));
+        return modelAndView;
     }
 
 }

@@ -31,9 +31,9 @@
                   <img src="img/company.png" alt="Company">
                   <p th:text="${job.company}"></p>
                   <h2 th:text="${job.title}"></h2>
-                  <p th:text="${job.salary}"></p>
+                  <p>R$ <Span th:text="${job.salary}"></Span></p>
                   <span class="new-job-label">Nova</span>
-                  <a class="btn btn-primary">Ver vaga</a>
+                  <a class="btn btn-primary" th:href="@{/jobs/{id}(id=${job.id})}">Ver vaga</a>
                 </li>                
               </ul>
             </div>
