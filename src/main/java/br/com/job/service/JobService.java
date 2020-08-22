@@ -29,4 +29,8 @@ public class JobService {
     public void delete(Integer id){
         jobRepository.deleteById(id);
     }
+
+    public List<Job> findByTitleJob(String title){
+        return jobRepository.findByTitleLike(title);
+    };
 }

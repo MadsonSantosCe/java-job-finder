@@ -12,7 +12,7 @@
     <div id="top-container" class="container-fluid">
         <h1 id="main-title" class="text-center">Encontre o emprego dos seus sonhos</h1>
         <p id="main-subtitle" class="text-center">Somos o site com mais vagas de tecnologia no mercado, direcionadas a home office</p>
-        <form id="search-form" class="form-inline" action="">
+        <form id="search-form" class="form-inline" th:action="@{/search}" method="GET">
           <div class="form-group col-md-10">
             <input type="text" class="form-control" id="job" name="job" placeholder="Digite a vaga que está buscando">
           </div>

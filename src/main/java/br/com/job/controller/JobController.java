@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collections;
@@ -55,6 +56,13 @@ public class JobController {
     public ModelAndView viewJob(@PathVariable Integer id, Job job){
         ModelAndView modelAndView = new ModelAndView("/view");        
         modelAndView.addObject("job", jobService.findById(id));
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public ModelAndView searchJobs(@RequestParam(value="job") String job_search){
+        ModelAndView modelAndView = new ModelAndView("/search"); 
+        modelAndView.addObject("jobs", jobService.findByTitleJob(job_search));
         return modelAndView;
     }
 
