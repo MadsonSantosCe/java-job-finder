@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Job implements Serializable {    
+public class Job implements Serializable, Comparable<Job> {    
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -85,11 +85,11 @@ public class Job implements Serializable {
         this.email = email;
     }
 
-    public boolean isNew_job() {
+    public Boolean getNew_job() {
         return new_job;
     }
 
-    public void setNew_job(boolean new_job) {
+    public void setNew_job(Boolean new_job) {
         this.new_job = new_job;
     }
 
@@ -124,6 +124,11 @@ public class Job implements Serializable {
         } else if (!id.equals(other.id))
             return false;
         return true;
-    }    
+    } 
+    
+    @Override
+    public int compareTo(Job obj){
+        return id.compareTo(obj.getId());
+    }
 
 }

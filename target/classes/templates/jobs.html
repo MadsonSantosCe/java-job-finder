@@ -16,42 +16,53 @@
             </div>
             <div id="form-box" class="col-md-12">
                 <h2>Preencha os dados da melhor forma possível para encontrar mais rápido seu dev!</h2>
-                <form action="">
+                <form th:object="${job}" th:action="@{/save}" method="POST">
                     <div class="form-group">
                       <label for="title">Título da vaga:</label>
-                      <input type="text" class="form-control" id="title" name="title" placeholder="Digite o título da vaga" required>
+                      <input type="text" class="form-control" id="title" name="title" placeholder="Digite o título da vaga" th:field="*{title}" required>
                       <small id="titleHelp" class="form-text text-muted">O título é muito importante, seja claro e objetivo.</small>
                     </div>
   
                     <div class="form-group">
                       <label for="description">Descrição da vaga:</label>
-                      <textarea type="text" class="form-control" id="description" name="description" placeholder="Descreva as atividades do desenvolvedor..." required></textarea>
+                      <textarea type="text" class="form-control" id="description" name="description" placeholder="Descreva as atividades do desenvolvedor..." th:field="*{description}" required></textarea>
                     </div>
   
                     <div class="form-group">
                       <label for="company">Empresa contratante:</label>
-                      <input type="text" class="form-control" id="company" name="company" placeholder="Digite a empresa que vai contratar" required>
+                      <input type="text" class="form-control" id="company" name="company" placeholder="Digite a empresa que vai contratar" th:field="*{company}" required>
                     </div>
   
                     <div class="form-group">
                       <label for="email">E-mail para contato:</label>
-                      <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail para contato" required>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail para contato" th:field="*{email}" required>
                     </div>
   
                     <div class="form-group">
                       <label for="salary">Salário oferecido:</label>
-                      <input type="text" class="form-control" id="salary" name="salary" placeholder="Digite o Salário da vaga" required>
+                      <input type="text" class="form-control" id="salary" name="salary" placeholder="Digite o Salário da vaga" th:field="*{salary}" required>
                     </div>
   
-                    <input type="hidden" name="new_job" value="1">
+                    <input type="hidden" id="new_job" name="new_job" th:field="*{new_job}" >
+
+                    <input type="hidden" id="createdAt" name="createdAt" th:field="*{createdAt}" >
+
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>
         </div>
     </div>
 
+    <script>
+      document.getElementById('new_job').value = true;
+      document.getElementById('createdAt').value = new Date();
+      console.log("teste");
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+
 </body>
 </html>
