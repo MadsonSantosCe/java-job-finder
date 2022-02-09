@@ -1,4 +1,4 @@
-# java-job-finder
+# Sistema de cadastro de vagas em Java
 Converti o back-end de um sistema de cadastro e busca de vagas em Node para Java. O projeto original em Node foi ministrado pelo Matheus battist na plataforma Udemy.
 Segue o repositório do curso em Node: [https://github.com/MadsonSantosCe/node-job-finder](https://github.com/MadsonSantosCe/node-job-finder)
 
