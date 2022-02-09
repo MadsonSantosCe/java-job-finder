@@ -14,11 +14,8 @@ Segue o repositório do curso em Node: [https://github.com/MadsonSantosCe/node-j
 - Banco de dados H2 (testes)
 
 ## Requisitos do projetos
-- Criar uma página simples de cadastro e consulta de vagas
-- O projeto original não se preocupa com autenticação de usuários ou permissões de acesso
-- O usuário que cadastra as vagas é o mesmo que as visualiza
-- Não existe a opção para atualizar ou deletar vagas
-- A página inicial deve listar todas as vagas cadastradas por ordem de inserção
-- A página inicial deve conter um botão de cadastrar vagas que leva para um formulário de cadastro
-- A página inicial deve conter um botão de consultar vagas que mostra todas as vagas pesquisando pelo título da vaga
-- A página inicial deve conter um botão para visualizar cada vaga individualmente
+- Use o [Git Bash](https://git-scm.com/downloads/ "Git Bash") para clonar o repositório https://github.com/MadsonSantosCe/java-job-finder.git
+- Acesse a pasta do repositório através do [IntelliJ IDEA](https://www.jetbrains.com/idea/download/?source=google&medium=cpc&campaign=9724741196&gclid=CjwKCAiA6Y2QBhAtEiwAGHybPV4FYKaUADkJ50HKBZpCaLHiX765pOEpheDo3BN0NmJh_yddTLKm_RoCTP0QAvD_BwE#section=windows/ "IntelliJ IDEA") ou qualquer IDE a sua escolha que compile o Java na versão 11
+- Acesse o repositório através do IntelliJ
+- Execute o projeto clicando CTRL+SHIFT+F10 no arquivo "JobApplication" na pasta main do projeto
+- Abra o navegador e digite o caminho http://localhost:8080/
